@@ -68,6 +68,13 @@ I build tools to make 3D content creation more intuitive and efficient. Currentl
   <sub>⚡ <em>Ship fast. Learn faster.</em></sub>
 </p>
 
+## 🛠️ Recent Velocity
+
+<!-- RECENT-VELOCITY:START -->
+- 🚀 Shipped `gh-profile-updater` — a Claude Code plugin that auto-generates impact-driven GitHub profile summaries from git history and session context, with zero-config auto-clone support.
+- 📚 Learned Claude Code's plugin architecture end-to-end — marketplace schemas, plugin manifests, command YAML frontmatter, and the full install lifecycle.
+- 🔧 Iterated through multiple schema validation fixes — corrected author object typing, restructured `skills/` to `commands/`, and aligned all manifests with the official plugin spec.
+<!-- RECENT-VELOCITY:END -->
 
 <!---
 satyam-fp/satyam-fp is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
