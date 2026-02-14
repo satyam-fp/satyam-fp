@@ -1,6 +1,6 @@
 # Satyam Kumar 👋
 
-🚀 **Founding Member & Head of AI @ [Mixar](https://mixar.app)** | 🤖 **AI-native fork of Blendr**
+🚀 **Founding Member & Head of AI @ [Mixar](https://mixar.app)** | 🤖 **AI-native fork of Blender**
 
 > Building foundational ML models for the next-gen AI-native 3D editor.
 
