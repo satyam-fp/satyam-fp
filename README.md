@@ -71,11 +71,21 @@ I build tools to make 3D content creation more intuitive and efficient. Currentl
 ## 🛠️ Recent Velocity
 
 <!-- RECENT-VELOCITY:START -->
+- [Shipping] Built a complete AI Scene Creation Pipeline (VGGT → SAM3 → VLM → Blender) that converts single images into full 3D blockout scenes.
+- [Shipping] Integrated SAM3D for 3D object reconstruction and MoGe for monocular depth estimation into the scene pipeline.
+- [Learning] Adopted SAM3D (PyTorch3D convention) and MoGe for geometry-aware 3D reconstruction from 2D images.
+- [Refining] Fixed EXIF orientation handling, improved ground plane detection with a hybrid camera-extrinsics approach, and resolved multi-frame segmentation for non-overlapping inputs.
+<!-- RECENT-VELOCITY:END -->
+
+## 📦 Past Projects
+
+<!-- PAST-PROJECTS:START -->
+### Feb 2026
 - 🚀 Shipped end-to-end scene reconstruction using SAM3D — single image to full 3D Blender scene with per-object mesh recovery, pose estimation, and semantic labeling via Claude VLM.
 - 🚀 Integrated MoGe monocular geometry estimation into the pipeline, enabling pointmap sharing across models and eliminating redundant depth computation.
 - 📚 Adopted SAM3D's PyTorch3D coordinate conventions and voxel-based shape representation, wiring up a multi-model inference stack (MoGe + DiNO ViT-L + diffusion) on Blackwell GPU.
 - 🔧 Added depth map debug visualizations, streamlined the Makefile, and implemented `--frames` parameter parsing for selective multi-frame processing.
-<!-- RECENT-VELOCITY:END -->
+<!-- PAST-PROJECTS:END -->
 
 <!---
 satyam-fp/satyam-fp is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
