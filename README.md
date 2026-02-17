@@ -71,9 +71,10 @@ I build tools to make 3D content creation more intuitive and efficient. Currentl
 ## 🛠️ Recent Velocity
 
 <!-- RECENT-VELOCITY:START -->
-- 🚀 Shipped `gh-profile-updater` — a Claude Code plugin that auto-generates impact-driven GitHub profile summaries from git history and session context, with zero-config auto-clone support.
-- 📚 Learned Claude Code's plugin architecture end-to-end — marketplace schemas, plugin manifests, command YAML frontmatter, and the full install lifecycle.
-- 🔧 Iterated through multiple schema validation fixes — corrected author object typing, restructured `skills/` to `commands/`, and aligned all manifests with the official plugin spec.
+- 🚀 Shipped end-to-end scene reconstruction using SAM3D — single image to full 3D Blender scene with per-object mesh recovery, pose estimation, and semantic labeling via Claude VLM.
+- 🚀 Integrated MoGe monocular geometry estimation into the pipeline, enabling pointmap sharing across models and eliminating redundant depth computation.
+- 📚 Adopted SAM3D's PyTorch3D coordinate conventions and voxel-based shape representation, wiring up a multi-model inference stack (MoGe + DiNO ViT-L + diffusion) on Blackwell GPU.
+- 🔧 Added depth map debug visualizations, streamlined the Makefile, and implemented `--frames` parameter parsing for selective multi-frame processing.
 <!-- RECENT-VELOCITY:END -->
 
 <!---
