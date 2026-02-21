@@ -71,9 +71,10 @@ I build tools to make 3D content creation more intuitive and efficient. Currentl
 ## 🛠️ Recent Velocity
 
 <!-- RECENT-VELOCITY:START -->
-- 🚀 Released gh-profile-updater — a Claude Code plugin that generates impact-driven GitHub profile READMEs from git activity, with automated PR creation and velocity archiving.
-- 🚀 Built auto-clone support so the plugin works without a pre-existing local copy of the profile repo.
-- 🔧 Hardened plugin schema and marketplace metadata for reliable discovery and installation.
+- [Shipping] Built a complete AI Scene Creation Pipeline (VGGT → SAM3 → VLM → Blender) that converts single images into full 3D blockout scenes.
+- [Shipping] Integrated SAM3D for 3D object reconstruction and MoGe for monocular depth estimation into the scene pipeline.
+- [Learning] Adopted SAM3D (PyTorch3D convention) and MoGe for geometry-aware 3D reconstruction from 2D images.
+- [Refining] Fixed EXIF orientation handling, improved ground plane detection with a hybrid camera-extrinsics approach, and resolved multi-frame segmentation for non-overlapping inputs.
 <!-- RECENT-VELOCITY:END -->
 
 ## 📦 Past Projects
@@ -84,6 +85,11 @@ I build tools to make 3D content creation more intuitive and efficient. Currentl
 - 🚀 Integrated MoGe monocular geometry estimation into the pipeline, enabling pointmap sharing across models and eliminating redundant depth computation.
 - 📚 Adopted SAM3D's PyTorch3D coordinate conventions and voxel-based shape representation, wiring up a multi-model inference stack (MoGe + DiNO ViT-L + diffusion) on Blackwell GPU.
 - 🔧 Added depth map debug visualizations, streamlined the Makefile, and implemented `--frames` parameter parsing for selective multi-frame processing.
+
+### Feb 2026
+- 🚀 Released gh-profile-updater — a Claude Code plugin that generates impact-driven GitHub profile READMEs from git activity, with automated PR creation and velocity archiving.
+- 🚀 Built auto-clone support so the plugin works without a pre-existing local copy of the profile repo.
+- 🔧 Hardened plugin schema and marketplace metadata for reliable discovery and installation.
 <!-- PAST-PROJECTS:END -->
 
 <!---
