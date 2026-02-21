@@ -71,15 +71,22 @@ I build tools to make 3D content creation more intuitive and efficient. Currentl
 ## 🛠️ Recent Velocity
 
 <!-- RECENT-VELOCITY:START -->
-- [Shipping] Built a complete AI Scene Creation Pipeline (VGGT → SAM3 → VLM → Blender) that converts single images into full 3D blockout scenes.
-- [Shipping] Integrated SAM3D for 3D object reconstruction and MoGe for monocular depth estimation into the scene pipeline.
-- [Learning] Adopted SAM3D (PyTorch3D convention) and MoGe for geometry-aware 3D reconstruction from 2D images.
-- [Refining] Fixed EXIF orientation handling, improved ground plane detection with a hybrid camera-extrinsics approach, and resolved multi-frame segmentation for non-overlapping inputs.
+- [Shipping] Built SeamNet, a GNN-based edge classifier for seam prediction on 3D meshes using PyG TransformerConv — achieved 96.4% train F1 on 72 meshes.
+- [Shipping] Scaled training to 38k objects over 100k steps, reaching 0.600 val F1 and 0.618 test F1 across 776 unseen meshes.
+- [Learning] Explored PyTorch Geometric's TransformerConv with learned edge projections for mesh-based classification tasks.
+- [Refining] Eliminated NaN instabilities in training by adding edge projection normalization and switching to BCEWithLogitsLoss on raw logits.
+- [Refining] Tuned generalization with regularization experiments (dropout, weight decay, connectivity loss) and added mixed precision support.
 <!-- RECENT-VELOCITY:END -->
 
 ## 📦 Past Projects
 
 <!-- PAST-PROJECTS:START -->
+### Feb 2026
+- [Shipping] Built a complete AI Scene Creation Pipeline (VGGT → SAM3 → VLM → Blender) that converts single images into full 3D blockout scenes.
+- [Shipping] Integrated SAM3D for 3D object reconstruction and MoGe for monocular depth estimation into the scene pipeline.
+- [Learning] Adopted SAM3D (PyTorch3D convention) and MoGe for geometry-aware 3D reconstruction from 2D images.
+- [Refining] Fixed EXIF orientation handling, improved ground plane detection with a hybrid camera-extrinsics approach, and resolved multi-frame segmentation for non-overlapping inputs.
+
 ### Feb 2026
 - 🚀 Shipped end-to-end scene reconstruction using SAM3D — single image to full 3D Blender scene with per-object mesh recovery, pose estimation, and semantic labeling via Claude VLM.
 - 🚀 Integrated MoGe monocular geometry estimation into the pipeline, enabling pointmap sharing across models and eliminating redundant depth computation.
