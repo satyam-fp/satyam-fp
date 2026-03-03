@@ -71,15 +71,21 @@ I build tools to make 3D content creation more intuitive and efficient. Currentl
 ## 🛠️ Recent Velocity
 
 <!-- RECENT-VELOCITY:START -->
-- [Shipping] Built a complete AI Scene Creation Pipeline (VGGT → SAM3 → VLM → Blender) that converts single images into full 3D blockout scenes.
-- [Shipping] Integrated SAM3D for 3D object reconstruction and MoGe for monocular depth estimation into the scene pipeline.
-- [Learning] Adopted SAM3D (PyTorch3D convention) and MoGe for geometry-aware 3D reconstruction from 2D images.
-- [Refining] Fixed EXIF orientation handling, improved ground plane detection with a hybrid camera-extrinsics approach, and resolved multi-frame segmentation for non-overlapping inputs.
+- 🚀 Built a self-scaling GPU orchestration layer — spin up any number of GPU VMs and they auto-register, advertise services, and start receiving routed workloads with zero frontend or backend deploys. Routes 6 GPU services across 6–22 GB VRAM budgets with 4 priority levels. Think Kubernetes-lite for GPU inference.
+- 🚀 Built a real-time GPU fleet dashboard from scratch with per-worker health tracking, job lifecycle metrics, and live queue stats across all 6 services.
+- 🔧 Implemented VRAM-aware job dispatching on a 2s loop with 3-attempt exponential backoff (5s–120s), dead-letter queue for credit refunds, and timeout handling for stuck jobs.
+- 🔧 Optimized queue throughput by pipelining 8 Redis ops per stats query and batch-loading jobs via MGET. Fixed race conditions in GLB uploads and hardened reliability with duplicate completion prevention and automatic pruning of offline workers.
 <!-- RECENT-VELOCITY:END -->
 
 ## 📦 Past Projects
 
 <!-- PAST-PROJECTS:START -->
+### Mar 2026
+- [Shipping] Built a complete AI Scene Creation Pipeline (VGGT → SAM3 → VLM → Blender) that converts single images into full 3D blockout scenes.
+- [Shipping] Integrated SAM3D for 3D object reconstruction and MoGe for monocular depth estimation into the scene pipeline.
+- [Learning] Adopted SAM3D (PyTorch3D convention) and MoGe for geometry-aware 3D reconstruction from 2D images.
+- [Refining] Fixed EXIF orientation handling, improved ground plane detection with a hybrid camera-extrinsics approach, and resolved multi-frame segmentation for non-overlapping inputs.
+
 ### Feb 2026
 - 🚀 Shipped end-to-end scene reconstruction using SAM3D — single image to full 3D Blender scene with per-object mesh recovery, pose estimation, and semantic labeling via Claude VLM.
 - 🚀 Integrated MoGe monocular geometry estimation into the pipeline, enabling pointmap sharing across models and eliminating redundant depth computation.
