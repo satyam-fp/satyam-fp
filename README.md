@@ -71,15 +71,19 @@ I build tools to make 3D content creation more intuitive and efficient. Currentl
 ## 🛠️ Recent Velocity
 
 <!-- RECENT-VELOCITY:START -->
-- 🚀 Built a self-scaling GPU orchestration layer — spin up any number of GPU VMs and they auto-register, advertise services, and start receiving routed workloads with zero frontend or backend deploys. Routes 6 GPU services across 6–22 GB VRAM budgets with 4 priority levels. Think Kubernetes-lite for GPU inference.
-- 🚀 Built a real-time GPU fleet dashboard from scratch with per-worker health tracking, job lifecycle metrics, and live queue stats across all 6 services.
-- 🔧 Implemented VRAM-aware job dispatching on a 2s loop with 3-attempt exponential backoff (5s–120s), dead-letter queue for credit refunds, and timeout handling for stuck jobs.
-- 🔧 Optimized queue throughput by pipelining 8 Redis ops per stats query and batch-loading jobs via MGET. Fixed race conditions in GLB uploads and hardened reliability with duplicate completion prevention and automatic pruning of offline workers.
+- 🚀 Built a 3D-to-video pipeline on top of LTX-2 (22B open-weight video diffusion). Blender renders depth + cryptomatte + a first-frame style anchor; the runner stacks IC-LoRA adapters and generates per shot. Geometry and camera come from the 3D scene; material and light come from the prompt. ~80s per 5s clip on a single RTX 6000.
+- 🔧 Tuned the baseline empirically: mapped which LoRA stacks help vs. degrade the 22B distilled checkpoint, identified the 128-divisible resolution constraint (compound stride through VAE, IC-LoRA reference downscale, and patchifier), found the 121-frame single-clip coherence ceiling, and debugged attention-mask semantics that were wiping out background geometry.
 <!-- RECENT-VELOCITY:END -->
 
 ## 📦 Past Projects
 
 <!-- PAST-PROJECTS:START -->
+### Apr 2026
+- 🚀 Built a self-scaling GPU orchestration layer — spin up any number of GPU VMs and they auto-register, advertise services, and start receiving routed workloads with zero frontend or backend deploys. Routes 6 GPU services across 6–22 GB VRAM budgets with 4 priority levels. Think Kubernetes-lite for GPU inference.
+- 🚀 Built a real-time GPU fleet dashboard from scratch with per-worker health tracking, job lifecycle metrics, and live queue stats across all 6 services.
+- 🔧 Implemented VRAM-aware job dispatching on a 2s loop with 3-attempt exponential backoff (5s–120s), dead-letter queue for credit refunds, and timeout handling for stuck jobs.
+- 🔧 Optimized queue throughput by pipelining 8 Redis ops per stats query and batch-loading jobs via MGET. Fixed race conditions in GLB uploads and hardened reliability with duplicate completion prevention and automatic pruning of offline workers.
+
 ### Mar 2026
 - [Shipping] Built a complete AI Scene Creation Pipeline (VGGT → SAM3 → VLM → Blender) that converts single images into full 3D blockout scenes.
 - [Shipping] Integrated SAM3D for 3D object reconstruction and MoGe for monocular depth estimation into the scene pipeline.
